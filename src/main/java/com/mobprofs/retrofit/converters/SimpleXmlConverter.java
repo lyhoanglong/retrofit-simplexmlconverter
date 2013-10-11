@@ -65,9 +65,8 @@ public class SimpleXmlConverter implements Converter {
             charset = MimeUtil.parseCharset(body.mimeType());
         }
 
-        InputStreamReader isr = null;
         try {
-            isr = new InputStreamReader(body.in(), charset);
+            InputStreamReader isr = new InputStreamReader(body.in(), charset);
             return serializer.read((Class<?>) type, isr);
         } catch (Exception e) {
             throw new ConversionException(e);
