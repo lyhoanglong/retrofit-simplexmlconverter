@@ -17,11 +17,6 @@ package com.mobprofs.retrofit.converters;
 
 import org.simpleframework.xml.Serializer;
 import org.simpleframework.xml.core.Persister;
-import retrofit.converter.ConversionException;
-import retrofit.converter.Converter;
-import retrofit.mime.MimeUtil;
-import retrofit.mime.TypedInput;
-import retrofit.mime.TypedOutput;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -29,6 +24,12 @@ import java.io.OutputStream;
 import java.io.StringWriter;
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Type;
+
+import retrofit.converter.ConversionException;
+import retrofit.converter.Converter;
+import retrofit.mime.MimeUtil;
+import retrofit.mime.TypedInput;
+import retrofit.mime.TypedOutput;
 
 /**
  * A {@link retrofit.converter.Converter} which uses Simple XML for serialization and deserialization of entities.
@@ -67,10 +68,6 @@ public class SimpleXmlConverter implements Converter {
         InputStreamReader isr = null;
         try {
             isr = new InputStreamReader(body.in(), charset);
-
-            // Need a Class instance here, as using the Type in serializer.read(...) doesn't work
-            Class<?> typeClass = (Class<?>) type;
-
             return serializer.read((Class<?>) type, isr);
         } catch (Exception e) {
             throw new ConversionException(e);
