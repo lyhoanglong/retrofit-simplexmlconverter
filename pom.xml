@@ -9,7 +9,7 @@
 
     <groupId>com.mobprofs</groupId>
     <artifactId>retrofit-simplexmlconverter</artifactId>
-    <version>1.1-SNAPSHOT</version>
+    <version>1.1</version>
     <packaging>jar</packaging>
 
     <name>retrofit-simplexmlconverter</name>
@@ -50,7 +50,7 @@
         <developerConnection>
             scm:git:ssh://git@github.com/mobile-professionals/retrofit-simplexmlconverter.git
         </developerConnection>
-    <tag>HEAD</tag>
+    <tag>retrofit-simplexmlconverter-1.1</tag>
   </scm>
 
     <issueManagement>
